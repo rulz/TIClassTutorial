@@ -1,10 +1,10 @@
 from django import forms
-
 from .models import MyCalendar
+from django.db import models
+from datetime import date
 
 
-class MyCalendarForm(forms.ModelForm):
-
+class MyCalendarForm(forms.Form):
     class Meta:
         model = MyCalendar
-        fields = ['user', 'class_name', 'class_date', 'note', 'date_create', 'date_edit']
+        fields = '__all__'

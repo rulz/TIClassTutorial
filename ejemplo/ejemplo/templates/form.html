@@ -7,10 +7,9 @@
 </head>
 <body>
 <h1>Hola</h1>
-<form method="POST" action="." class="post-form">{% csrf_token %}>
+<form method="POST" action="{% url 'calendar_create' %}" class="post-form">{% csrf_token %}>
     {{ form.as_p }}
     <button type='submit'>Save</button>
 </form>
-
 </body>
 </html>

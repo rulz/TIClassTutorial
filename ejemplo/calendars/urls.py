@@ -6,6 +6,6 @@ urlpatterns = [
     url(r'^$', views.index, name = 'index'),
 
     # /calendar/form/
-    url(r'^form/', views.form, name = 'form')
+    url(r'^create/', views.calendar_create, name = 'calendar_create')
 
 ]
