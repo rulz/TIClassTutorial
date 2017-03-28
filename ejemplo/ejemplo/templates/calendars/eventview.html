@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<h1>Event Viewer</h1>
+</head>
+<body>
+  <h1>Events</h1>
+  <ul>
+    {% for article in object_list %}
+      <li>{{ article.headline }}</li>
+    {% empty %}
+      <li>No events yet.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <h1>Event</h1>
+  <h1>User: {{ object.user }}</h1>
+  <h1>Class Name: {{ object.class_name }}</h1>
+  <p>Class Date: {{ object.class_date }}</p>
+  <p>Class Url: {{ object.class_url }}</p>
+  <p>Notes: {{ object.note }}</p>
+  <a href="{% url 'calendar_delete' pk=object.pk %}">Delete</a>
+  <a href="{% url 'calendar_edit' pk=object.pk %}">Edit</a>
+</body>
+</html>
