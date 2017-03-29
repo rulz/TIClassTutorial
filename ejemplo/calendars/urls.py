@@ -9,16 +9,19 @@ urlpatterns = [
     # /calendar/create/
     url(r'^create/$', views.calendar_create, name = 'calendar_create'),
 
-    # /calendar/id/
+    # /calendar/create/done/
+    url(r'^create/done/$', views.create_confirm, name='calendar_create_confirm'),
+
+    # /calendar/id/detail/
     url(r'^(?P<pk>[-\d]+)/detail/$', views.calendar_detail, name='calendar_detail'),
 
-    # /calendar/delete/
+    # /calendar/id/delete/
     url(r'^(?P<pk>[-\d]+)/delete/$', views.calendar_delete, name='calendar_delete'),
 
     # /calendar/delete/done
     url(r'^delete/done/$', views.delete_confirm, name='calendar_delete_confirm'),
 
-    # /calendar/edit/
+    # /calendar/id/edit/
     url(r'^(?P<pk>[-\d]+)/edit/$', views.calendar_edit, name='calendar_edit'),
 
     # /calendar/edit/done

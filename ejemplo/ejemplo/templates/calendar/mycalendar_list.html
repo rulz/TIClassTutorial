@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<h1>List of Classes</h1>
+</head>
+<body>
+  <ul>
+    {% for object in object_list %}
+      <h3><li>{{ object.class_name }}</li></h3>
+      <a href="{% url 'calendar_delete' pk=object.pk %}">Delete</a>
+      <a href="{% url 'calendar_edit' pk=object.pk %}">Edit</a>
+    {% empty %}
+      <li>No events yet.</li>
+    {% endfor %}
+  </ul>
+  <h3><a href="{% url 'calendar_create' %}">Create an event</a><h3>
+  <h3><a href="{% url 'index' %}">Back to Index</a></h3>
+</body>
+</html>

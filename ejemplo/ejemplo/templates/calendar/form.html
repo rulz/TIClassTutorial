@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <meta charset="UTF-8">
+    <title>Creating/Editing an Event</title>
+</head>
+<body>
+<h1>Create/Edit your event.</h1>
+<form method="POST" action="{% url 'calendar_create' %}" class="post-form">{% csrf_token %}>
+    {{ form.as_p }}
+    <button type='submit'>Save</button>
+</form>
+</body>
+<h2><a href="{% url 'index' %}">Go back to Index</a></h2>
+<h2><a href="{% url 'calendar_list' %}">Go Back to Event List</a></h2>
+</html>
