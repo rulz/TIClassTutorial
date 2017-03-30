@@ -10,6 +10,7 @@ from django.views.generic.edit import DeleteView
 from django.views.generic import TemplateView
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import UpdateView
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -34,8 +35,29 @@ class CreateConfirm(TemplateView):
 
 create_confirm = CreateConfirm.as_view()
 
+class CreateUserForm(CreateView):
+    template_name = 'calendar/form_create_user.html'
+    model = User
+    fields = ('username', 'email', 'password')
+    #form_class = UserForm
+    success_url = '/calendar/createuser/done/'
+
+    def form_valid(self, form):
+        form.save()
+        new_user = User.objects.create_user(**form.cleaned_data)
+        login(new_user)
+        return super(CreateUserForm, self).form_valid(form)
+
+create_user = CreateUserForm.as_view()
+
+class CreateUserConfirm(TemplateView):
+    template_name = "calendar/create_user_confirm.html"
+
+create_user_confirm = CreateConfirm.as_view()
+
 class CalendarDetailView(DetailView):
     model = MyCalendar
+    template_name = "calendar/mycalendar_detail.html"
 
     def get_context_data(self, **kwargs):
         context = super(CalendarDetailView, self).get_context_data(**kwargs)

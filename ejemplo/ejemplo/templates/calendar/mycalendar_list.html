@@ -12,16 +12,18 @@
       </div>
 </head>
 <body>
+  <h3><a href="{% url 'calendar_create' %}">Create a new event</a><h3>
   <ul>
     {% for object in object_list %}
       <h3><li>{{ object.class_name }}</li></h3>
+      <a href="{% url 'calendar_detail' pk=object.pk %}">Details</a>
       <a href="{% url 'calendar_delete' pk=object.pk %}">Delete</a>
       <a href="{% url 'calendar_edit' pk=object.pk %}">Edit</a>
     {% empty %}
       <li>No events yet.</li>
     {% endfor %}
   </ul>
-  <h3><a href="{% url 'calendar_create' %}">Create an event</a><h3>
   <h3><a href="{% url 'index' %}">Back to Index</a></h3>
+
 </body>
 </html>

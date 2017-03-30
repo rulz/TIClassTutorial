@@ -29,4 +29,11 @@ urlpatterns = [
 
     # /calendar/list/
     url(r'^list/$', views.calendar_list, name='calendar_list'),
+
+    # /calendar/createuser/
+    url(r'^createuser/$', views.create_user, name='create_user'),
+
+    # /calendar/createuser/done/
+    url(r'^createuser/done/$', views.create_user_confirm, name='create_user_confirm'),
+
 ]
