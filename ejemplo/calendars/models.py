@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class MyCalendar(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, null=True, blank=True)
     class_name = models.CharField(max_length=150)
     class_url = models.URLField()
     class_date = models.DateField()
