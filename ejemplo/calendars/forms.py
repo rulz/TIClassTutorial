@@ -14,3 +14,5 @@ class UserForm(ModelForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password')
+
+int a = 0
