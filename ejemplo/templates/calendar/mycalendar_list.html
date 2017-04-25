@@ -14,7 +14,7 @@
 <body>
   <h3><a href="{% url 'calendar_create' %}">Create a new event</a><h3>
   <ul>
-    
+
     {% for object in object_list %}
       <h3><li>{{ object.class_name }}</li></h3>
       <a href="{% url 'calendar_detail' pk=object.pk %}">Details</a>
